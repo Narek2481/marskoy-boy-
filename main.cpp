@@ -18,7 +18,7 @@ void vessel_1(bool arr_vessel[][], int  arr_random_x [] ,int arr_random_y []) { 
 
 
 
-void random_vessel (int arr_vessel , int size){ // random navery dasavorelu funkcia 
+void random_vessel (int arr_vessel[][] , int size){ // random navery dasavorelu funkcia 
 	int arr_random_x [size];
 	int arr_random_y [size];
 
@@ -60,7 +60,7 @@ void random_vessel (int arr_vessel , int size){ // random navery dasavorelu funk
         }  
     }
 	vessel_1(arr_vessel,arr_random_x, arr_random_y);
-	cout << arr_vessel[0]<< endl;
+	cout << arr_vessel[0][0]<< endl;
 
 		
     // }
@@ -84,7 +84,7 @@ int  main() {
     }
     cout << arr_vessel[0]<< endl;
     
-	random_vessel(&arr_vessel[0][0], size);
+	random_vessel(arr_vessel[0][0], size);
 
 	
 
