@@ -74,7 +74,6 @@ void circle_close(int arr_vessel[][10],int x,int y){
     
 }
 
-
 // patahakan mek hatanoc navery texadrox funkcia 
 void ship_random_1(int arr_vessel[][10],const int size){ 
     
@@ -92,33 +91,22 @@ void ship_random_1(int arr_vessel[][10],const int size){
 
 void chack_ship_random_2(int arr_vessel[][10],int x,int y){
     int chack_arr[4][2];
-    
     if(arr_vessel[x][y-1] == 0 && y-1 > 0){
         chack_arr[0][0] = x;
         chack_arr[0][1] = y-1;
     }
-    
-    
     if(arr_vessel[x][y+1] == 0 && y+1 < 10){
-        chack_arr[0][0] = x;
-        chack_arr[0][1] = y+1;
+        chack_arr[1][0] = x;
+        chack_arr[1][1] = y+1;
     }
-    
-    
     if(arr_vessel[x-1][y] == 0 && x-1 > 0){
-        chack_arr[0][0] = x-1;
-        chack_arr[0][1] = y;
+        chack_arr[2][0] = x-1;
+        chack_arr[2][1] = y;
     }
-    
-    
-   
     if(arr_vessel[x+1][y] == 0 && x+1 < 10){
-        chack_arr[0][0] = x+1;
-        chack_arr[0][1] = y;
+        chack_arr[3][0] = x+1;
+        chack_arr[3][1] = y;
     }
-    
-    
-        
     int k = rand() % 4;
     if(chack_arr[k][0] < 10 && chack_arr[k][0] > -1 && chack_arr[k][1] < 10 && chack_arr[k][1] > -1){
         arr_vessel[chack_arr[k][0]][chack_arr[k][1]] = 2;
@@ -130,11 +118,8 @@ void chack_ship_random_2(int arr_vessel[][10],int x,int y){
 }
 // erkuhatanoc navery texadrox funkcia 
 void ship_random_2(int arr_vessel[][10],const int size){ 
-    int ship_lenght = 2;
     int x = rand()%10;
     int y = rand()%10; 
-    
-    
     if(arr_vessel[x][y] == 0){
         
         arr_vessel[x][y] = 2;
@@ -144,8 +129,128 @@ void ship_random_2(int arr_vessel[][10],const int size){
     }
 
 }
+int chack_ship_random_4(int arr_vessel[][10],int x,int y){
+    if(arr_vessel[x][y-3] == 0 && y-3 > -1){
+        arr_vessel[x][y-3] = 4;
+        arr_vessel[x][y-2] = 4;
+        arr_vessel[x][y-1] = 4;
+        arr_vessel[x][y] = 4;
+        circle_close(arr_vessel,x,y-3);
+        circle_close(arr_vessel,x,y-1);
+        circle_close(arr_vessel,x,y-2);
+        circle_close(arr_vessel,x,y);
+        return 0;
+    }
+    if(arr_vessel[x][y+3] == 0 && y+3 < 10){
+        arr_vessel[x][y+3] = 4;
+        arr_vessel[x][y+2] = 4;
+        arr_vessel[x][y+1] = 4;
+        arr_vessel[x][y] = 4;
+        circle_close(arr_vessel,x,y+3);
+        circle_close(arr_vessel,x,y+1);
+        circle_close(arr_vessel,x,y+2);
+        circle_close(arr_vessel,x,y);
+        return 0;
 
+    }
+    if(arr_vessel[x-3][y] == 0 && x-3 > -1){
+        arr_vessel[x-3][y] = 4;
+        arr_vessel[x-2][y] = 4;
+        arr_vessel[x-1][y] = 4;
+        arr_vessel[x][y] = 4;
+        circle_close(arr_vessel,x-3,y);
+        circle_close(arr_vessel,x-2,y);
+        circle_close(arr_vessel,x-1,y);
+        circle_close(arr_vessel,x,y);
+        return 0;
 
+    }
+    if(arr_vessel[x+3][y] == 0 && x+3 < 10){
+        arr_vessel[x+3][y] = 4;
+        arr_vessel[x+2][y] = 4;
+        arr_vessel[x+1][y] = 4;
+        arr_vessel[x][y] = 4;
+        circle_close(arr_vessel,x+3,y);
+        circle_close(arr_vessel,x+2,y);
+        circle_close(arr_vessel,x+1,y);
+        circle_close(arr_vessel,x,y);
+        return 0;
+
+    }
+    return 0;
+}
+
+void ship_random_4(int arr_vessel[][10],const int size){ 
+    int x = rand()%10;
+    int y = rand()%10; 
+    
+    if(arr_vessel[x][y] == 0){
+        
+        chack_ship_random_4(arr_vessel,x,y);
+    }else{
+        ship_random_4(arr_vessel,size);
+    }
+
+}
+int chack_ship_random_3(int arr_vessel[][10],int x,int y){
+    if(arr_vessel[x][y-2] == 0 && y-2 > -1){
+        
+        arr_vessel[x][y-2] = 3;
+        arr_vessel[x][y-1] = 3;
+        arr_vessel[x][y] = 3;
+    
+        circle_close(arr_vessel,x,y-1);
+        circle_close(arr_vessel,x,y-2);
+        circle_close(arr_vessel,x,y);
+        return 0;
+    }
+    if(arr_vessel[x][y+2] == 0 && y+2 < 10){
+        arr_vessel[x][y+2] = 3;
+        arr_vessel[x][y+1] = 3;
+        arr_vessel[x][y] = 3;
+        circle_close(arr_vessel,x,y+1);
+        circle_close(arr_vessel,x,y+2);
+        circle_close(arr_vessel,x,y);
+        return 0;
+
+    }
+    if(arr_vessel[x-2][y] == 0 && x-2 > -1){
+        arr_vessel[x-2][y] = 3;
+        arr_vessel[x-1][y] = 3;
+        arr_vessel[x][y] = 3;
+        circle_close(arr_vessel,x-2,y);
+        circle_close(arr_vessel,x-1,y);
+        circle_close(arr_vessel,x,y);
+        return 0;
+
+    }
+    if(arr_vessel[x+2][y] == 0 && x+2 < 10){
+        
+        arr_vessel[x+2][y] = 3;
+        arr_vessel[x+1][y] = 3;
+        arr_vessel[x][y] = 3;
+        
+        circle_close(arr_vessel,x+2,y);
+        circle_close(arr_vessel,x+1,y);
+        circle_close(arr_vessel,x,y);
+        return 0;
+
+    }
+    return 0;
+}
+
+void ship_random_3(int arr_vessel[][10],const int size){ 
+    int x = rand()%10;
+    int y = rand()%10; 
+   
+    if(arr_vessel[x][y] == 0){
+        
+        chack_ship_random_3(arr_vessel,x,y);
+    }else{
+        ship_random_3(arr_vessel,size);
+    }
+
+}
 
 
 int  main() {
@@ -158,22 +263,31 @@ int  main() {
         {
             arr_vessel[i][j] = 0;
         }
-        
     }
+    
+   
+    ship_random_4(arr_vessel,size);
+    ship_random_3(arr_vessel,size);
+    ship_random_3(arr_vessel,size);
+     ship_random_2(arr_vessel,size);
+    ship_random_2(arr_vessel,size);
+    ship_random_2(arr_vessel,size);
     for (int i = 0; i < 4; i++)
     {
         ship_random_1(arr_vessel,size);
     }
     
-    ship_random_2(arr_vessel,size);
-    ship_random_2(arr_vessel,size);
-    ship_random_2(arr_vessel,size);
-    
-    
+    // ship_random_all(arr_vessel,size,4);
+    // ship_random_all(arr_vessel,size,3);
+    // ship_random_all(arr_vessel,size,3);
+    // ship_random_all(arr_vessel,size,2);
+    // ship_random_all(arr_vessel,size,2);
+    // ship_random_all(arr_vessel,size,2);
+    // ship_random_all(arr_vessel,size,1);
+    // ship_random_all(arr_vessel,size,1);
+    // ship_random_all(arr_vessel,size,1);
+    // ship_random_all(arr_vessel,size,1);
 
 	map_screen(arr_vessel,size);
-
-	
-
 	return 0;
 }
