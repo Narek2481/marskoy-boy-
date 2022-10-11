@@ -130,53 +130,88 @@ void ship_random_2(int arr_vessel[][10],const int size){
 
 }
 int chack_ship_random_4(int arr_vessel[][10],int x,int y){
-    if(arr_vessel[x][y-3] == 0 && y-3 > -1){
-        arr_vessel[x][y-3] = 4;
-        arr_vessel[x][y-2] = 4;
-        arr_vessel[x][y-1] = 4;
-        arr_vessel[x][y] = 4;
-        circle_close(arr_vessel,x,y-3);
-        circle_close(arr_vessel,x,y-1);
-        circle_close(arr_vessel,x,y-2);
-        circle_close(arr_vessel,x,y);
-        return 0;
-    }
-    if(arr_vessel[x][y+3] == 0 && y+3 < 10){
-        arr_vessel[x][y+3] = 4;
-        arr_vessel[x][y+2] = 4;
-        arr_vessel[x][y+1] = 4;
-        arr_vessel[x][y] = 4;
-        circle_close(arr_vessel,x,y+3);
-        circle_close(arr_vessel,x,y+1);
-        circle_close(arr_vessel,x,y+2);
-        circle_close(arr_vessel,x,y);
-        return 0;
+    int random_parties = rand()%4;
+    switch (random_parties)
+    {
+        case (0):
+            if(arr_vessel[x][y-3] == 0 && y-3 > -1){
+                arr_vessel[x][y-3] = 4;
+                arr_vessel[x][y-2] = 4;
+                arr_vessel[x][y-1] = 4;
+                arr_vessel[x][y] = 4;
+                circle_close(arr_vessel,x,y-3);
+                circle_close(arr_vessel,x,y-1);
+                circle_close(arr_vessel,x,y-2);
+                circle_close(arr_vessel,x,y);
+                return 0;
+            }else{
+                chack_ship_random_4(arr_vessel,x,y);
+            }
+        break;
+    
+        
+        
+        case (1):
+            if(arr_vessel[x][y+3] == 0 && y+3 < 10){
+                arr_vessel[x][y+3] = 4;
+                arr_vessel[x][y+2] = 4;
+                arr_vessel[x][y+1] = 4;
+                arr_vessel[x][y] = 4;
+                circle_close(arr_vessel,x,y+3);
+                circle_close(arr_vessel,x,y+1);
+                circle_close(arr_vessel,x,y+2);
+                circle_close(arr_vessel,x,y);
+                return 0;
+            }else{
+                chack_ship_random_4(arr_vessel,x,y);
+            }
+        break;
+    
+        case (2):
+            if(arr_vessel[x-3][y] == 0 && x-3 > -1)
+            {
+                arr_vessel[x-3][y] = 4;
+                arr_vessel[x-2][y] = 4;
+                arr_vessel[x-1][y] = 4;
+                arr_vessel[x][y] = 4;
+                circle_close(arr_vessel,x-3,y);
+                circle_close(arr_vessel,x-2,y);
+                circle_close(arr_vessel,x-1,y);
+                circle_close(arr_vessel,x,y);
+                return 0;
 
-    }
-    if(arr_vessel[x-3][y] == 0 && x-3 > -1){
-        arr_vessel[x-3][y] = 4;
-        arr_vessel[x-2][y] = 4;
-        arr_vessel[x-1][y] = 4;
-        arr_vessel[x][y] = 4;
-        circle_close(arr_vessel,x-3,y);
-        circle_close(arr_vessel,x-2,y);
-        circle_close(arr_vessel,x-1,y);
-        circle_close(arr_vessel,x,y);
-        return 0;
+            }else{
+                chack_ship_random_4(arr_vessel,x,y);
+            }
+        break;
+    
+        case (3):
+            if(arr_vessel[x+3][y] == 0 && x+3 < 10){
+                arr_vessel[x+3][y] = 4;
+                arr_vessel[x+2][y] = 4;
+                arr_vessel[x+1][y] = 4;
+                arr_vessel[x][y] = 4;
+                circle_close(arr_vessel,x+3,y);
+                circle_close(arr_vessel,x+2,y);
+                circle_close(arr_vessel,x+1,y);
+                circle_close(arr_vessel,x,y);
+                return 0;
 
+            }else{
+                chack_ship_random_4(arr_vessel,x,y);
+            }
+        break;
+    
+      
+        
+    
+    default:
+        break;
     }
-    if(arr_vessel[x+3][y] == 0 && x+3 < 10){
-        arr_vessel[x+3][y] = 4;
-        arr_vessel[x+2][y] = 4;
-        arr_vessel[x+1][y] = 4;
-        arr_vessel[x][y] = 4;
-        circle_close(arr_vessel,x+3,y);
-        circle_close(arr_vessel,x+2,y);
-        circle_close(arr_vessel,x+1,y);
-        circle_close(arr_vessel,x,y);
-        return 0;
-
-    }
+    
+    
+    
+    
     return 0;
 }
 
@@ -193,49 +228,87 @@ void ship_random_4(int arr_vessel[][10],const int size){
 
 }
 int chack_ship_random_3(int arr_vessel[][10],int x,int y){
-    if(arr_vessel[x][y-2] == 0 && y-2 > -1){
-        
-        arr_vessel[x][y-2] = 3;
-        arr_vessel[x][y-1] = 3;
-        arr_vessel[x][y] = 3;
     
-        circle_close(arr_vessel,x,y-1);
-        circle_close(arr_vessel,x,y-2);
-        circle_close(arr_vessel,x,y);
-        return 0;
-    }
-    if(arr_vessel[x][y+2] == 0 && y+2 < 10){
-        arr_vessel[x][y+2] = 3;
-        arr_vessel[x][y+1] = 3;
-        arr_vessel[x][y] = 3;
-        circle_close(arr_vessel,x,y+1);
-        circle_close(arr_vessel,x,y+2);
-        circle_close(arr_vessel,x,y);
-        return 0;
-
-    }
-    if(arr_vessel[x-2][y] == 0 && x-2 > -1){
-        arr_vessel[x-2][y] = 3;
-        arr_vessel[x-1][y] = 3;
-        arr_vessel[x][y] = 3;
-        circle_close(arr_vessel,x-2,y);
-        circle_close(arr_vessel,x-1,y);
-        circle_close(arr_vessel,x,y);
-        return 0;
-
-    }
-    if(arr_vessel[x+2][y] == 0 && x+2 < 10){
+    int random_parties = rand()%4;
+    switch (random_parties)
+    {
+        case (0):
+            if(arr_vessel[x][y-2] == 0 && y-2 > -1){
+                
+                arr_vessel[x][y-2] = 3;
+                arr_vessel[x][y-1] = 3;
+                arr_vessel[x][y] = 3;
+                circle_close(arr_vessel,x,y-1);
+                circle_close(arr_vessel,x,y-2);
+                circle_close(arr_vessel,x,y);
+                return 0;
+            }else{
+                chack_ship_random_3(arr_vessel,x,y);
+            }
+        break;
+    
         
-        arr_vessel[x+2][y] = 3;
-        arr_vessel[x+1][y] = 3;
-        arr_vessel[x][y] = 3;
         
-        circle_close(arr_vessel,x+2,y);
-        circle_close(arr_vessel,x+1,y);
-        circle_close(arr_vessel,x,y);
-        return 0;
+        case (1):
+            if(arr_vessel[x][y+2] == 0 && y+2 < 10){
+                
+                arr_vessel[x][y+2] = 3;
+                arr_vessel[x][y+1] = 3;
+                arr_vessel[x][y] = 3;
+                circle_close(arr_vessel,x,y+1);
+                circle_close(arr_vessel,x,y+2);
+                circle_close(arr_vessel,x,y);
+                return 0;
+            }else{
+                chack_ship_random_3(arr_vessel,x,y);
+            }
+        break;
+    
+        case (2):
+            if(arr_vessel[x-2][y] == 0 && x-2 > -1)
+            {
+                
+                arr_vessel[x-2][y] = 3;
+                arr_vessel[x-1][y] = 3;
+                arr_vessel[x][y] = 3;
+                
+                circle_close(arr_vessel,x-2,y);
+                circle_close(arr_vessel,x-1,y);
+                circle_close(arr_vessel,x,y);
+                return 0;
 
+            }else{
+                chack_ship_random_3(arr_vessel,x,y);
+            }
+        break;
+    
+        case (3):
+            if(arr_vessel[x+2][y] == 0 && x+2 < 10){
+                
+                arr_vessel[x+2][y] = 3;
+                arr_vessel[x+1][y] = 3;
+                arr_vessel[x][y] = 3;
+                
+                circle_close(arr_vessel,x+2,y);
+                circle_close(arr_vessel,x+1,y);
+                circle_close(arr_vessel,x,y);
+                return 0;
+
+            }else{
+                chack_ship_random_4(arr_vessel,x,y);
+            }
+        break;
+    
+      
+        
+    
+    default:
+        break;
     }
+    
+    
+    
+    
     return 0;
 }
 
@@ -277,16 +350,7 @@ int  main() {
         ship_random_1(arr_vessel,size);
     }
     
-    // ship_random_all(arr_vessel,size,4);
-    // ship_random_all(arr_vessel,size,3);
-    // ship_random_all(arr_vessel,size,3);
-    // ship_random_all(arr_vessel,size,2);
-    // ship_random_all(arr_vessel,size,2);
-    // ship_random_all(arr_vessel,size,2);
-    // ship_random_all(arr_vessel,size,1);
-    // ship_random_all(arr_vessel,size,1);
-    // ship_random_all(arr_vessel,size,1);
-    // ship_random_all(arr_vessel,size,1);
+    
 
 	map_screen(arr_vessel,size);
 	return 0;
