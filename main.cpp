@@ -147,7 +147,7 @@ int chack_ship_random_4(int arr_vessel[][10],int x,int y){
             }else{
                 chack_ship_random_4(arr_vessel,x,y);
             }
-        break;
+            break;
     
         
         
@@ -165,7 +165,7 @@ int chack_ship_random_4(int arr_vessel[][10],int x,int y){
             }else{
                 chack_ship_random_4(arr_vessel,x,y);
             }
-        break;
+            break;
     
         case (2):
             if(arr_vessel[x-3][y] == 0 && x-3 > -1)
@@ -183,7 +183,7 @@ int chack_ship_random_4(int arr_vessel[][10],int x,int y){
             }else{
                 chack_ship_random_4(arr_vessel,x,y);
             }
-        break;
+            break;
     
         case (3):
             if(arr_vessel[x+3][y] == 0 && x+3 < 10){
@@ -200,13 +200,9 @@ int chack_ship_random_4(int arr_vessel[][10],int x,int y){
             }else{
                 chack_ship_random_4(arr_vessel,x,y);
             }
-        break;
-    
-      
-        
-    
-    default:
-        break;
+            break;
+        default:
+            break;
     }
     
     
@@ -245,7 +241,7 @@ int chack_ship_random_3(int arr_vessel[][10],int x,int y){
             }else{
                 chack_ship_random_3(arr_vessel,x,y);
             }
-        break;
+            break;
     
         
         
@@ -262,7 +258,7 @@ int chack_ship_random_3(int arr_vessel[][10],int x,int y){
             }else{
                 chack_ship_random_3(arr_vessel,x,y);
             }
-        break;
+            break;
     
         case (2):
             if(arr_vessel[x-2][y] == 0 && x-2 > -1)
@@ -280,7 +276,7 @@ int chack_ship_random_3(int arr_vessel[][10],int x,int y){
             }else{
                 chack_ship_random_3(arr_vessel,x,y);
             }
-        break;
+            break;
     
         case (3):
             if(arr_vessel[x+2][y] == 0 && x+2 < 10){
@@ -297,7 +293,7 @@ int chack_ship_random_3(int arr_vessel[][10],int x,int y){
             }else{
                 chack_ship_random_4(arr_vessel,x,y);
             }
-        break;
+            break;
     
       
         
