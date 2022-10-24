@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void map_screen(int arr_vessel[][10],const int size){ 
+void map_screen(int arr_vessel[][10],const int size) {
     for (int i = 0; i < size; i++)
     {
         for (int j = 0; j < size; j++)
@@ -17,7 +17,6 @@ void map_screen(int arr_vessel[][10],const int size){
         }
         cout << endl;
     }
-    
 }
 
 void circle_close(int arr_vessel[][10],int x,int y){
