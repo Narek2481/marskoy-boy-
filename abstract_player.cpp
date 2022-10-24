@@ -3,7 +3,31 @@
 #include "abstract_player.h"
 using namespace std;
 
-abstract_player::abstract_player();
+// abstract_player::abstract_player();
+int abstract_player::ships[10][10]={
+    {0,0,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0}
+};
+bool abstract_player::shot_places[10][10]={ 
+    {false,false,false,false,false,false,false,false,false,false},
+    {false,false,false,false,false,false,false,false,false,false},
+    {false,false,false,false,false,false,false,false,false,false},
+    {false,false,false,false,false,false,false,false,false,false},
+    {false,false,false,false,false,false,false,false,false,false},
+    {false,false,false,false,false,false,false,false,false,false},
+    {false,false,false,false,false,false,false,false,false,false},
+    {false,false,false,false,false,false,false,false,false,false},
+    {false,false,false,false,false,false,false,false,false,false},
+    {false,false,false,false,false,false,false,false,false,false}
+};
 // virtual void abstract_player::shooting_at_coordinates();
 void abstract_player::generate_ship_coordinates(int size){
     int x = rand()%10;
@@ -46,31 +70,7 @@ void abstract_player::map_screen(){
         cout << endl;
     }
 };
-int abstract_player::ships[10][10]{
-    {0,0,0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0,0,0}
-};
 
-bool abstract_player::shot_places[10][10]{
-    {false,false,false,false,false,false,false,false,false,false},
-    {false,false,false,false,false,false,false,false,false,false},
-    {false,false,false,false,false,false,false,false,false,false},
-    {false,false,false,false,false,false,false,false,false,false},
-    {false,false,false,false,false,false,false,false,false,false},
-    {false,false,false,false,false,false,false,false,false,false},
-    {false,false,false,false,false,false,false,false,false,false},
-    {false,false,false,false,false,false,false,false,false,false},
-    {false,false,false,false,false,false,false,false,false,false},
-    {false,false,false,false,false,false,false,false,false,false}
-};
 
 void abstract_player::generate_ship_coordinates_quarters(int x,int y,int ships[][10] ){
     ships[x][y] = 4;
