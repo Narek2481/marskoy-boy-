@@ -160,8 +160,8 @@ void abstract_player::generate_ship_coordinates_second(int x,int y,int ships[][1
         switch (random_parties)
         {
             case 0:
-                circle_close(x+1, y);
-                check = false;
+                // circle_close(x+1, y);
+                // check = false;
                 if(x + 1 < 10 && x + 1 > -1 && ships[x+1][y] == 0 ) {
                     ships[x+1][y] = 2;
                     circle_close(x+1, y);
