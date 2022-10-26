@@ -32,4 +32,5 @@ private:
     void generate_ship_coordinates_thirds(int x,int y,int ships[][10]);
     void generate_ship_coordinates_second(int x,int y,int ships[][10]);
     void circle_close(int x, int y);
+    void setEmptyValue(int x, int y);
 };

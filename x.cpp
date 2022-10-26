@@ -94,14 +94,11 @@ public:
                 cout<<"------------------------------------------------------------------------------------"<<endl;
                 shooting_at_coordinates();
             }else{
-                
                 map_screen_2();
                 cout<< "es" <<endl;
                 cout<<"------------------------------------------------------------------------------------"<<endl;
             }
         }
-       
-
     }
 
     void map_screen_2(){
@@ -117,7 +114,6 @@ public:
                     }
                 }else{
                     cout << "-  ";
-                   
                 }
             }
             cout << endl;
@@ -142,7 +138,6 @@ int  main() {
     x.generate_ship_coordinates(1);
     x.generate_ship_coordinates(1);
     x.map_screen();
-   
     cout<<"------------------------------------------------------------------------------------"<<endl;
     Player_computer y;
     y.generate_ship_coordinates(4);
@@ -160,18 +155,11 @@ int  main() {
     int counter_cycle = 0;
     while((!(x.counter == 20))||(!(x.counter == 20))){
         if(counter_cycle == 0){
-            y.shooting_at_coordinates();
-            
+            y.shooting_at_coordinates(); 
         }
-
         x.shooting_at_coordinates();
         y.shooting_at_coordinates();
         x.shooting_at_coordinates();
-       
-        
-        
-        
-        
     }
     return 0;
 }
